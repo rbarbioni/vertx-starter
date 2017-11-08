@@ -1,5 +1,6 @@
-package io.vertx.starter;
+package br.com.rbarbioni.vertx;
 
+import br.com.rbarbioni.vertx.verticle.RouteVerticle;
 import io.vertx.core.Vertx;
 import io.vertx.ext.unit.Async;
 import io.vertx.ext.unit.TestContext;
@@ -10,14 +11,14 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(VertxUnitRunner.class)
-public class MainVerticleTest {
+public class RouteVerticleTest {
 
   private Vertx vertx;
 
   @Before
   public void setUp(TestContext tc) {
     vertx = Vertx.vertx();
-    vertx.deployVerticle(MainVerticle.class.getName(), tc.asyncAssertSuccess());
+    vertx.deployVerticle(RouteVerticle.class.getName(), tc.asyncAssertSuccess());
   }
 
   @After
@@ -28,7 +29,7 @@ public class MainVerticleTest {
   @Test
   public void testThatTheServerIsStarted(TestContext tc) {
     Async async = tc.async();
-    vertx.createHttpClient().getNow(8080, "localhost", "/", response -> {
+    vertx.createHttpClient().getNow(8888, "localhost", "/product", response -> {
       tc.assertEquals(response.statusCode(), 200);
       response.bodyHandler(body -> {
         tc.assertTrue(body.length() > 0);
