@@ -10,3 +10,5 @@ buildNumber.properties
 /.idea/
 /.vertx/
 .iml
+./gradle
+build/
