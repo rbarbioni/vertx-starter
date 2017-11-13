@@ -4,6 +4,8 @@ import io.vertx.camel.CamelBridge;
 import io.vertx.camel.CamelBridgeOptions;
 import io.vertx.camel.InboundMapping;
 import io.vertx.core.AbstractVerticle;
+import io.vertx.core.CompositeFuture;
+import io.vertx.core.Future;
 import org.apache.camel.CamelContext;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
@@ -13,7 +15,6 @@ public class CamelVerticle extends AbstractVerticle {
   @Override
   public void start() throws Exception {
     super.start();
-
     CamelContext camel = new DefaultCamelContext();
     camel.addRoutes(new RouteBuilder() {
       @Override

@@ -23,7 +23,10 @@ dependencies {
     compile "io.vertx:vertx-camel-bridge:$vertxVersion"
     compile "org.apache.camel:camel-stream:2.19.2"
     compile "org.apache.camel:camel-jetty:2.19.2"
-    compile "org.slf4j:slf4j-api:1.7.21"
+    compile "org.slf4j:slf4j-api:1.7.25"
+    compile "org.slf4j:slf4j-simple:1.7.25"
+    compile "javax.activation:activation:1.1.1"
+    compile "javax.xml.bind:jaxb-api:2.3.0"
     testCompile "junit:junit:4.12"
     testCompile "io.vertx:vertx-unit:$vertxVersion"
 }
