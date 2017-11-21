@@ -13,3 +13,4 @@ buildNumber.properties
 vertx-start-project.iml
 /.gradle/
 build/
+out/
